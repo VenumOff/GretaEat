@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GretaEat - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f8f3e7] text-[#222222]">
+
+    <nav class="bg-[#222222] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/index.html" class="text-[#f8f3e7] text-2xl font-bold">GretaEat</a>
+            
+            <button id="menu-toggle" class="md:hidden text-[#f8f3e7] text-3xl focus:outline-none">
+                ☰
+            </button>
+    
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="/html/categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+                <a href="/html/first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+                <a href="/html/random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+                <a href="/html/search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-[#333333]">
+            <a href="/html/categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+            <a href="/html/first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+            <a href="/html/random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+            <a href="/html/search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-6 mt-8">
+
+        <h1 class="text-3xl font-bold mb-6 text-center">Bienvenue sur GretaEat</h1>
+        <p class="text-center text-xl text-[#222222] mb-8">Découvrez des recettes par catégorie, explorez des plats aléatoires ou effectuez une recherche pour trouver vos favoris !</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center cursor-pointer">
+                <h2 class="text-xl font-semibold text-[#222222] mb-4">Catégories</h2>
+                <p class="text-gray-500 text-center mb-4">Explorez les plats par catégorie.</p>
+                <a href="/html/categories.html" class="bg-[#222222] text-[#f8f3e7] py-2 px-4 rounded-lg hover:bg-violet-400">Voir les catégories</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center cursor-pointer">
+                <h2 class="text-xl font-semibold text-[#222222] mb-4">Première Lettre</h2>
+                <p class="text-gray-500 text-center mb-4">Recherchez des plats par leur première lettre.</p>
+                <a href="/html/first-letter.html" class="bg-[#222222] text-[#f8f3e7] py-2 px-4 rounded-lg hover:bg-violet-400">Explorer par lettre</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center cursor-pointer">
+                <h2 class="text-xl font-semibold text-[#222222] mb-4">Recette Aléatoire</h2>
+                <p class="text-gray-500 text-center mb-4">Laissez-vous surprendre par une recette aléatoire !</p>
+                <a href="/html/random.html" class="bg-[#222222] text-[#f8f3e7] py-2 px-4 rounded-lg hover:bg-violet-400">Voir une recette aléatoire</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center cursor-pointer">
+                <h2 class="text-xl font-semibold text-[#222222] mb-4">Rechercher un Plat</h2>
+                <p class="text-gray-500 text-center mb-4">Trouvez un plat en entrant son nom.</p>
+                <a href="/html/search.html" class="bg-[#222222] text-[#f8f3e7] py-2 px-4 rounded-lg hover:bg-violet-400">Rechercher un plat</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center cursor-pointer">
+                <h2 class="text-xl font-semibold text-[#222222] mb-4">Voir toutes les catégories</h2>
+                <p class="text-gray-500 text-center mb-4">Explorez toutes les catégories de recettes disponibles.</p>
+                <a href="/html/categories.html" class="bg-[#222222] text-[#f8f3e7] py-2 px-4 rounded-lg hover:bg-violet-400">Voir les catégories</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

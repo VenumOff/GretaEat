@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GretaEat - Recherche de Plat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-[#f8f3e7] text-[#222222]">
 
-<body>
-    <form>
-        <label for="searchByName">Entrez le nom de votre plat</label>
-        <input type="search" name="searchByName" id="searchByName">
-        <button type="button">Rechercher</button>
-    </form>
-    <div></div>
+    <nav class="bg-[#222222] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/index.html" class="text-[#f8f3e7] text-2xl font-bold">GretaEat</a>
+            
+            <button id="menu-toggle" class="md:hidden text-[#f8f3e7] text-3xl focus:outline-none">
+                ☰
+            </button>
+    
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="/html/categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Catégorie</a>
+                <a href="/html/first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+                <a href="/html/random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+                <a href="/html/search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-[#333333]">
+            <a href="/html/categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Catégorie</a>
+            <a href="/html/first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+            <a href="/html/random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+            <a href="/html/search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+        </div>
+    </nav>
+    
+    <div class="max-w-2xl mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-lg mt-10">
+        <h1 class="text-3xl font-bold text-center text-[#222222] mb-6">Rechercher un Plat</h1>
+
+        <form class="mb-6">
+            <label for="searchByName" class="block text-lg font-semibold text-gray-700">Entrez le nom de votre plat</label>
+            <input type="search" id="searchByName" placeholder="Ex: Pasta, Sushi..." class="mt-2 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500">
+            <button type="button" id="searchButton" class="mt-4 w-full p-3 bg-[#222222] text-[#f8f3e7] rounded-lg hover:bg-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500">Rechercher</button>
+        </form>
+
+        <div id="results" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+
     <script src="../js/search.js"></script>
 </body>
-
 </html>

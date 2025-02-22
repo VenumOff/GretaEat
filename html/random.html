@@ -4,14 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recette Aléatoire</title>
+    <title>GretaEat - Recette Aléatoire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Recette Aléatoire</h1>
-    <h2 id="meal-name"></h2>
-    <img id="meal-img" src="" alt="Image du plat" width="300">
-    <p id="meal-instructions"></p>
+<body class="bg-[#f8f3e7] font-sans">
+    
+    <nav class="bg-[#222222] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/index.html" class="text-[#f8f3e7] text-2xl font-bold">GretaEat</a>
+            
+            <button id="menu-toggle" class="md:hidden text-[#f8f3e7] text-3xl focus:outline-none">
+                ☰
+            </button>
+    
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+                <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+                <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+                <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-[#333333]">
+            <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+            <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+            <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+            <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+        </div>
+    </nav>
+    
+    <div class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h1 class="text-4xl font-extrabold text-center text-[#222222] mb-6">Recette Aléatoire</h1>
+        
+        <h2 id="meal-name" class="text-3xl font-bold text-center text-[#222222] mb-4"></h2>
+        
+        <img id="meal-img" src="" alt="Image du plat" class="w-full h-auto rounded-lg shadow-md mb-6">
+
+        <p id="meal-instructions" class="text-lg text-[#222222] leading-relaxed"></p>
+
+        <div class="text-center mt-6">
+            <button id="new-recipe-btn" class="px-6 py-3 bg-violet-500 text-white text-lg font-bold rounded-lg shadow-md hover:bg-violet-700 transition">
+                Nouvelle Recette
+            </button>
+        </div>
+    </div>
+
     <script src="../js/random.js"></script>
 </body>
 

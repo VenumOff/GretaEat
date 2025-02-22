@@ -4,39 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GretaEat - Recettes par première lettre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div id="alphabet">
-        <a href="#">A</a>/
-        <a href="#">B</a>/
-        <a href="#">C</a>/
-        <a href="#">D</a>/
-        <a href="#">E</a>/
-        <a href="#">F</a>/
-        <a href="#">G</a>/
-        <a href="#">H</a>/
-        <a href="#">I</a>/
-        <a href="#">J</a>/
-        <a href="#">K</a>/
-        <a href="#">L</a>/
-        <a href="#">M</a>/
-        <a href="#">N</a>/
-        <a href="#">O</a>/
-        <a href="#">P</a>/
-        <a href="#">Q</a>/
-        <a href="#">R</a>/
-        <a href="#">S</a>/
-        <a href="#">T</a>/
-        <a href="#">U</a>/
-        <a href="#">V</a>/
-        <a href="#">W</a>/
-        <a href="#">X</a>/
-        <a href="#">Y</a>/
-        <a href="#">Z</a>
+<body class="bg-[#f8f3e7] text-[#222222]">
+
+    <nav class="bg-[#222222] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/index.html" class="text-[#f8f3e7] text-2xl font-bold">GretaEat</a>
+            
+            <button id="menu-toggle" class="md:hidden text-[#f8f3e7] text-3xl focus:outline-none">
+                ☰
+            </button>
+    
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+                <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+                <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+                <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-[#333333]">
+            <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+            <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+            <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+            <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+        </div>
+    </nav>
+
+    <div id="alphabet" class="flex flex-wrap gap-2 justify-center mt-8">
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">A</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">B</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">C</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">D</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">E</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">F</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">G</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">H</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">I</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">J</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">K</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">L</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">M</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">N</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">O</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">P</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">Q</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">R</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">S</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">T</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">U</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">V</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">W</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">X</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">Y</a>
+        <a href="#" class="letter text-lg font-semibold p-2 hover:bg-gray-200 rounded">Z</a>
     </div>
-    <div id="container"></div>
+
+    <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 px-4"></div>
+
     <script src="../js/first-letter.js"></script>
 </body>
 

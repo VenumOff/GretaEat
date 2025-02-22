@@ -4,11 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GretaEat - Détail du Plat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div></div>
+<body class="bg-[#f8f3e7] text-[#222222]">
+    
+    <nav class="bg-[#222222] p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/index.html" class="text-[#f8f3e7] text-2xl font-bold">GretaEat</a>
+            
+            <button id="menu-toggle" class="md:hidden text-[#f8f3e7] text-3xl focus:outline-none">
+                ☰
+            </button>
+    
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+                <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+                <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+                <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-[#333333]">
+            <a href="categorie.html" class="text-[#f8f3e7] hover:text-violet-400">Categorie</a>
+            <a href="first-letter.html" class="text-[#f8f3e7] hover:text-violet-400">Première Lettre</a>
+            <a href="random.html" class="text-[#f8f3e7] hover:text-violet-400">Recette Aléatoire</a>
+            <a href="search.html" class="text-[#f8f3e7] hover:text-violet-400">Rechercher un Plat</a>
+        </div>
+    </nav>
+
+    <div id="meal-container" class="container mx-auto p-6 mt-8"></div>
+
     <script src="../js/meal.js"></script>
 </body>
 

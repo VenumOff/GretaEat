@@ -1,50 +1,63 @@
+const div = document.querySelector("#meal-container");
+const params = new URLSearchParams(window.location.search);
 
-
-const div = document.querySelector("div");
-
-fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=53083`)
+fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.get("i")}`)
     .then((res) => res.json())
     .then((data) => {
         const mealSelected = data.meals[0];
         const article = document.createElement("article");
-        const listIngredient = document.createElement("ul");
-        const listMeasure = document.createElement("ul");
+        article.classList.add("bg-white", "border", "border-gray-200", "rounded-lg", "shadow-lg", "p-6", "space-y-6");
+
         const mealName = document.createElement("h2");
         mealName.textContent = mealSelected.strMeal;
+        mealName.classList.add("text-3xl", "font-bold", "text-center", "text-[#222222]");
 
-        // Créer les ingrédients et les mesures
+        const mealImg = document.createElement("img");
+        mealImg.src = mealSelected.strMealThumb;
+        mealImg.alt = mealSelected.strMeal;
+        mealImg.classList.add("w-full", "h-auto", "rounded-lg", "shadow-md", "mx-auto");
+
+        const mealArea = document.createElement("p");
+        mealArea.textContent = `Area: ${mealSelected.strArea}`;
+        mealArea.classList.add("text-lg", "text-[#222222]");
+
+        const mealCategory = document.createElement("p");
+        mealCategory.textContent = `Category: ${mealSelected.strCategory}`;
+        mealCategory.classList.add("text-lg", "text-[#222222]");
+
+        const listIngredients = document.createElement("ul");
+        listIngredients.classList.add("space-y-2");
+
         for (let index = 0; index < 20; index++) {
-            const mealIngredient = document.createElement("li");
-            const mealMeasure = document.createElement("li");
             const ingredient = mealSelected[`strIngredient${index + 1}`];
             const measure = mealSelected[`strMeasure${index + 1}`];
 
-            if (ingredient !== "") {
-                mealIngredient.textContent = ingredient;
-                listIngredient.appendChild(mealIngredient);
-            }
-
-            if (measure !== " ") {
-                mealMeasure.textContent = measure;
-                listMeasure.appendChild(mealMeasure);
+            if (ingredient && ingredient.trim() !== "") {
+                const ingredientItem = document.createElement("li");
+                ingredientItem.textContent = `${ingredient}: ${measure}`;
+                ingredientItem.classList.add("text-lg", "text-[#222222]");
+                listIngredients.appendChild(ingredientItem);
             }
         }
-        const mealImg = document.createElement("img");
-        mealImg.src = mealSelected.strMealThumb;
-        const mealArea = document.createElement("span");
-        mealArea.textContent = `Area: ${mealSelected.strArea}`;
-        const mealCategorie = document.createElement("span");
-        mealCategorie.textContent = `Category: ${mealSelected.strCategory}`;
 
         article.appendChild(mealName);
-        article.appendChild(listIngredient);
-        article.appendChild(listMeasure);
         article.appendChild(mealImg);
         article.appendChild(mealArea);
-        article.appendChild(mealCategorie);
+        article.appendChild(mealCategory);
+        article.appendChild(listIngredients);
 
         div.appendChild(article);
     })
-    .catch((error) =>
-        console.error("Erreur lors du chargement des données :", error)
-    );
+    .catch((error) => {
+        console.error("Erreur lors du chargement des données :", error);
+        div.innerHTML = "<p class='text-center text-red-500'>Erreur de chargement des données. Veuillez réessayer plus tard.</p>";
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+    
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    });
